@@ -40,7 +40,6 @@ install:
   - conda update -q --all
   - conda install  numpy flake8 pytest scipy dask multipledispatch cloudpickle numba mock scikit-learn jupyter   
   - pip install --no-deps -e .  
-  - python setup.py install
 
 script:
   - conda list
