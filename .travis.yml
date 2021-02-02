@@ -38,6 +38,7 @@ install:
   - conda config --set always_yes yes
   - conda config --set auto_update_conda False
   - conda update -q --all
+  - conda install -c conda-forge sparse
   - conda install  numpy flake8 pytest scipy dask multipledispatch cloudpickle numba mock scikit-learn jupyter   
   - pip install --no-deps -e .  
 
