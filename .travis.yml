@@ -20,10 +20,12 @@ sudo: True
 
 matrix:
   include:
-    - python: '3.7'
-    - python: '3.7'
+    - python: '3.8'
+    - python: '3.8'
       arch: ppc64le
-
+    - python: '3.6'
+    - python: '3.6'
+      arch: ppc64le
 install:
   - if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then 
         wget https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-ppc64le.sh -O miniconda.sh;
