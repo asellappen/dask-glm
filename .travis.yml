@@ -49,5 +49,7 @@ install:
 
 script:
   - conda list
-  - travis_wait 40 pytest dask_glm/tests
+  - pytest dask_glm/tests/test_admm.py dask_glm/tests/test_algos_families.py
+  - pytest dask_glm/tests/test_estimators.py dask_glm/tests/test_regularizers.py
+  - pytest dask_glm/tests/test_utils.py
   - flake8 dask_glm
