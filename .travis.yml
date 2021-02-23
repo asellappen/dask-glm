@@ -20,12 +20,21 @@ sudo: True
 
 matrix:
   include:
+    - python: '2.7'
+      env: PYTHON_VERSION="2.7"
+    - python: '2.7'
+      arch: ppc64le
+      env: PYTHON_VERSION="2.7"
     - python: '3.7'
+      env: PYTHON_VERSION="3.7"
     - python: '3.7'
       arch: ppc64le
+      env: PYTHON_VERSION="3.7"
     - python: '3.8'
+      env: PYTHON_VERSION="3.8"
     - python: '3.8'
       arch: ppc64le
+      env: PYTHON_VERSION="3.8"
 install:
   - if [[ "$TRAVIS_CPU_ARCH" == "ppc64le" ]]; then 
         wget https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-ppc64le.sh -O miniconda.sh;
@@ -38,7 +47,7 @@ install:
   - conda config --set always_yes yes
   - conda config --set auto_update_conda False
   - conda update -q --all
-  - conda install python=3.7
+  - conda install python=$PYTHON_VERSION
   - conda install -c conda-forge sparse
   - conda install  numpy flake8 pytest scipy dask multipledispatch cloudpickle numba mock scikit-learn jupyter   
   - pip install --no-deps -e .  
