@@ -49,7 +49,5 @@ install:
 
 script:
   - conda list
-  - travis_wait 30 pytest dask_glm
+  - travis_wait 20 pytest dask_glm/tests
   - flake8 dask_glm
-  - pip install codecov
-  - codecov
